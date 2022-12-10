@@ -7,5 +7,8 @@
 > Please ignore the last 5 minutes of topic1_part1.mp4, live coding can be a disaster
 
 ## Topic 2: Create new GUI object from FXML file (fx:root)
+1. Create a template GUI object
+2. Adding it to existing FXML page
+3. Modify data in this GUI object
 
 ## Topic 3: Assign Functionality to GUI object (EventHandler)

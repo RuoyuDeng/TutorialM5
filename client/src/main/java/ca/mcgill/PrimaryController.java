@@ -5,14 +5,19 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 public class PrimaryController implements Initializable {
 
     @FXML
     private Label textLabel;
+
+    @FXML
+    private VBox displayVbox;
 
     @FXML
     private void switchToSecondary() throws IOException {
@@ -30,5 +35,11 @@ public class PrimaryController implements Initializable {
             throw new RuntimeException(e);
         }
         textLabel.setText(newContent);
+        MyShape myShape = new MyShape();
+        displayVbox.getChildren().add(myShape);
+
+        myShape.changeLabelText("new text",0);
+        myShape.changeLabelText(newContent,2);
     }
+
 }
