@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ca.mcgill</groupId>
+    <artifactId>server</artifactId>
+    <version>1.0.0.</version>
+    <packaging>${packaging.type}</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.test.skip>true</maven.test.skip>
+    </properties>
+
+    <!-- legal -->
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.3.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.33</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <!-- useful collection operations-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
+
+        <!-- long polling support-->
+        <dependency>
+            <groupId>eu.kartoffelquadrat</groupId>
+            <artifactId>asyncrestlib</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <scope>test</scope>
+      </dependency>
+              <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.isharipov</groupId>
+            <artifactId>gson-adapters</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <!-- Override default name of generated jars -->
+        <finalName>splendor</finalName>
+
+        <plugins>
+            <!-- enforce passing junit tests as build precondition -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+<!--                <version>3.2.0</version>-->
+<!--                <configuration>-->
+<!--                    <configLocation>google_checks.xml</configLocation>-->
+<!--                    <consoleOutput>true</consoleOutput>-->
+<!--                    <violationSeverity>warning</violationSeverity>-->
+<!--                    <failOnViolation>true</failOnViolation>-->
+<!--                    <failsOnError>true</failsOnError>-->
+<!--                    <linkXRef>false</linkXRef>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>validate</id>-->
+<!--                        <phase>validate</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>ca.mcgill.server.ServerApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!--dev profile is intended for native deployment of Xox.-->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <activatedProperties>dev</activatedProperties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+        </profile>
+        <!--dev profile is intended for native deployment of Xox, with no calls to other services on startup-->
+        <profile>
+            <id>uidev</id>
+            <properties>
+                <activatedProperties>uidev</activatedProperties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+        </profile>
+        <!--prod profile is intended for dockerized deployment of Xox.-->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <activatedProperties>prod</activatedProperties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+        </profile>
+        <!--war profile is intended for webapp deployment of in an existing webserver.-->
+        <profile>
+            <id>war</id>
+            <properties>
+                <activatedProperties>war</activatedProperties>
+                <packaging.type>war</packaging.type>
+            </properties>
+            <dependencies>
+                <!-- Build to WAR has extra tomcat dependency-->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+</project>
