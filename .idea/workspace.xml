@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acbbb19a-6749-4b23-9561-1dd975a7b8c5" name="Changes" comment="update readme">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ca/mcgill/MyShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/ca/mcgill/myshape.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ca/mcgill/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/target/classes/ca/mcgill/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/communicationbeans/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/mcgill/MyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/mcgill/MyShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/mcgill/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/mcgill/PrimaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/resources/ca/mcgill/myshape.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/ca/mcgill/myshape.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/resources/ca/mcgill/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/ca/mcgill/primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/ca/mcgill/MyShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/ca/mcgill/MyShape.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/classes/ca/mcgill/PrimaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/ca/mcgill/PrimaryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/ca/mcgill/myshape.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/ca/mcgill/myshape.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/classes/ca/mcgill/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/ca/mcgill/primary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ca/mcgill/server/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ca/mcgill/server/DemoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670629851756</updated>
       <workItem from="1670629853331" duration="40000" />
-      <workItem from="1670630459581" duration="2314000" />
+      <workItem from="1670630459581" duration="3906000" />
     </task>
     <task id="LOCAL-00001" summary="update readme">
       <created>1670633887646</created>

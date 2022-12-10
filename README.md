@@ -12,3 +12,12 @@
 3. Modify data in this GUI object
 
 ## Topic 3: Assign Functionality to GUI object (EventHandler)
+1. Difference between static function assigning and dynamic function assigning
+2. Disable / enable button
+
+## Topic 4: Summary - tiny project
+1. GSON serialization and deserialization
+2. tiny demo project
+
+## Topic 5: M5 - Code Review: Lobby Page
+1.
