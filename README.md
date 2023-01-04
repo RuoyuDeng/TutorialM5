@@ -20,4 +20,4 @@
 2. tiny demo project
 
 ## Topic 5: M5 - Code Review: Lobby Page
-1.
+1. See details in video
